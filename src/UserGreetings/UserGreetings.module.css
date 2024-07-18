@@ -1,15 +1,17 @@
 .welcome{
-    border-radius: 5px;
-    border: none;
-    background-color: rgba(108, 192, 108, 0.717);
-    color: white;
+    font-size: 2.5em;
+    background-color: hsl(102, 82%, 45%);
+    margin: 0;
+    color:white;
     padding: 10px;
+    border-radius: 5px;
 }
 
 .login{
-    border-radius: 5px;
-    border: none;
-    background-color: rgba(240, 59, 59, 0.717);
-    color: white;
+    font-size: 2.5em;
+    background-color: hsl(0, 82%, 45%);
+    margin: 0;
+    color:white;
     padding: 10px;
+    border-radius: 5px;
 }
