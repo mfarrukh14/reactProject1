@@ -1,0 +1,15 @@
+.welcome{
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(108, 192, 108, 0.717);
+    color: white;
+    padding: 10px;
+}
+
+.login{
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(240, 59, 59, 0.717);
+    color: white;
+    padding: 10px;
+}
