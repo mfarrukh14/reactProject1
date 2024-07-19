@@ -13,7 +13,10 @@ export default function List()
     // fruits.sort((a,b)=> a.calories - b.calories);        NUMERIC ORDER
     // fruits.sort((a, b)=> b.calories - a.calories);       REVERSE NUMERIC ORDER
 
-    const listItems = fruits.map(fruit => <li key={fruit.id}>{fruit.name}: &nbsp; {fruit.calories}</li>)
+    const lowCalFruits = fruits.filter(fruit=> fruit.calories < 100);
+    const highCalFruits = fruits.filter(fruit=> fruit.calories >= 100);
+
+    const listItems = highCalFruits.map(highCalFruit => <li key={highCalFruit.id}>{highCalFruit.name}: &nbsp; <b>{highCalFruit.calories}</b></li>)
 
     return(
         <ol>
