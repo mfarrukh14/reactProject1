@@ -7,10 +7,10 @@ export default function List(props)
 
     return(
         <>
-            <h2>
+            <h2 className="list-category">
                 {props.category}
             </h2>
-            <ol>
+            <ol className="list-items">
                 {listItems}
             </ol>
         </>
