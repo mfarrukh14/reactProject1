@@ -1,12 +1,10 @@
-import UserGreetings from "./UserGreetings/UserGreetings";
+import List from './List.jsx'
 
-function App()
+export default function App()
 {
   return(
     <>
-      <UserGreetings isLoggedIn={true}/>
+    <List />
     </>
   );
 }
-
-export default App
