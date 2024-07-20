@@ -1,19 +1,21 @@
 
-function Button()
+export default function Button()
 {
+    let count = 0;
+    const handleClick = (name) => {
+        if (count < 3)
+        {
+            count++;
+            console.log(`You clicked me ${count} time\s`);
+        }
 
-    const styles = {
-            borderRadius: "5px",
-            border: "none",
-            backgroundColor: "hsl(200,100%,70%)",
-            color: "white",
-            padding: "10px 20px",
-            cursor: "pointer",
+        else{
+            console.log(`${name}, stop clicking me`);
+        }
     }
 
     return(
-        <button style={styles}>Click Me</button>
+        <button onClick={() => handleClick("Farrukh")}>Click Me</button>
     );
-}
 
-export default Button
+}
