@@ -5,7 +5,8 @@ export default function Counter()
     const [count,setCount] = useState(0);
 
     const decrement = () =>{
-        setCount(count - 1);
+        setCount(c => c - 1);
+        setCount(c => c - 1);
     }
 
     const reset = () =>{
@@ -13,7 +14,8 @@ export default function Counter()
     }
 
     const increment = () =>{
-        setCount(count+1);
+        setCount(c => c+1);
+        setCount(c => c+1);
     }
 
     return(<div className='counter-container'>
