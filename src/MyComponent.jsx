@@ -7,6 +7,7 @@ export default function MyComponent()
     const [quantity, setQuantity] = useState(0);
     const [comment, setComment] = useState("");
     const [payment, setPayment] = useState("");
+    const [shipping, setShipping] = useState("");
 
     const handleNameChange = (e) =>{
         setName(e.target.value);
@@ -24,6 +25,10 @@ export default function MyComponent()
     function handlePayment(event)
     {
         setPayment(event.target.value);
+    }
+
+    function handleShpping(event){
+        setShipping(event.target.value);
     }
 
     return(
@@ -46,6 +51,19 @@ export default function MyComponent()
             </select>
 
             <p>Payment: {payment}</p>
+
+            <h3>Shipping Method:</h3>
+
+            <label>
+                <input type="radio" value="PickUp" checked = {shipping === "PickUp"} onChange={handleShpping} />
+                PickUp
+            </label><br />
+            <label>
+                <input type="radio" value="Delivery" checked = {shipping === "Delivery"} onChange={handleShpping}/>
+                Delivery
+            </label>
+
+            <p>shipping: {shipping}</p>
 
         </div>
     );
