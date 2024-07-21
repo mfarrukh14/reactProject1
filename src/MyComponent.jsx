@@ -1,44 +1,35 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 
 export default function MyComponent()
 {
-    const [name, setName] = useState("Guest");
-    const [age, setAge] = useState(0);
-    const [isEmployed, setEmployed] = useState(false);
 
-    const updateName = () => {
-        setName("Farrukh");
+    const [name,setName] = useState("Guest");
+    const [quantity, setQuantity] = useState(0);
+    const [comment, setComment] = useState("");
+
+    const handleNameChange = (e) =>{
+        setName(e.target.value);
     }
 
-    const incrementAge = () =>{
-        setAge(age + 1);
+    const handleQuantityChange = (e) =>{
+        setQuantity(e.target.value);
     }
 
-    const decrementAge = () => {
-        setAge(age - 1);
-    }
-
-    const resetAge = () =>{
-        setAge(0);
-    }
-
-    const toggleEmployedStatus = () =>{
-        setEmployed(!isEmployed);
+    function handleCommentChange(event)
+    {
+        setComment(event.target.value);
     }
 
     return(
         <div>
+            <input value={name} type="text" onChange={(e) => handleNameChange(e)} />
             <p>Name: {name}</p>
-            <button onClick={updateName}>Set Name</button>
 
-            <p>Age: {age}</p>
-            <button onClick={incrementAge}>Increment Age</button>
-            <button onClick={decrementAge}>Decrement Age</button>
-            <button onClick={resetAge}>Reset Age</button>
+            <input value={quantity} type="number" onChange={(e) => handleQuantityChange(e)} />
+            <p>Quantity: {quantity}</p>
 
-            <p>Employee: {isEmployed ? "Yes" : "No"}</p>
-            <button onClick={toggleEmployedStatus}>toggle status</button>
+            <textarea value={comment} onChange={handleCommentChange} placeholder='Leave delivery instructions'></textarea>
+            <p>Comment: {comment}</p>
         </div>
     );
-
 }
