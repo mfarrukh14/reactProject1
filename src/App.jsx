@@ -1,10 +1,11 @@
-import MyComponent from "./MyComponent";
+import ColorPicker from "./ColorPicker";
+
 
 export default function App()
 {
   return(
     <>
-      <MyComponent />
+      <ColorPicker />
     </>
   );
 }
