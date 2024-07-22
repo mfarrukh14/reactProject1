@@ -1,30 +1,51 @@
-import React, {useState} from 'react';
+import React, {useState} from "react";
 
 export default function MyComponent()
 {
-    const [foods, setFoods] = useState(["Apple","Banana","Orange"]);
+    const[cars, setCars] = useState([]);
+    const[carYear, setCarYear] = useState(new Date().getFullYear());
+    const[carMake, setCarMake] = useState("");
+    const[carModel, setCarModel] = useState("");
 
-    function handleAddFood()
+    function handleAddCar()
     {
-        const foodItem = document.getElementById("foodName").value;
-        document.getElementById("foodName").value = "";
+        const carItem = {year: carYear, make: carMake, model: carModel};
 
-        setFoods(f => [...f,foodItem]);
+        setCars(c => [...c,carItem])
     }
 
-    function handleRemoveFood(index)
+    function handleRemoveCar(index)
     {
-        setFoods(foods.filter((_, i)=>i!==index));
+        setCars(cars.filter((_,i)=>i!==index));
     }
+
+    function handleCarYearChange(event)
+    {
+        setCarYear(event.target.value);
+    }
+
+    function handleCarMakeChange(event)
+    {
+        setCarMake(event.target.value);
+    }
+
+    function handleCarModelChange(event)
+    {
+        setCarModel(event.target.value);
+    }
+
 
     return(
         <div>
-            <h1>Your Food items: </h1>
+            <h1>Selected Cars: </h1>
             <ul>
-                {foods.map((food, index) => <li key={index} onClick={()=>handleRemoveFood(index)}>{food}</li>)}
+                {cars.map((car, index) => <li key={index} onClick={()=>{handleRemoveCar(index)}}>{carYear} {carMake} {carModel}</li>)}
             </ul>
-            <input type="text" id='foodName' placeholder='Enter your food here' />
-            <button onClick={handleAddFood}>Add Item</button>
+            <input type="number" value={carYear} onChange={handleCarYearChange} /><br />
+            <input type="text" placeholder="Car Make" value={carMake} onChange={handleCarMakeChange} /><br />
+            <input type="text" placeholder="Car Model" value={carModel} onChange={handleCarModelChange}/><br />
+            <button onClick={handleAddCar}>Add Car</button>
         </div>
     );
+
 }
