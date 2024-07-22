@@ -2,28 +2,29 @@ import React, {useState} from 'react';
 
 export default function MyComponent()
 {
+    const [foods, setFoods] = useState(["Apple","Banana","Orange"]);
 
-    const [car, setCar] = useState({year: 2024, make: "Ford", model: "Mustang"});
-
-    function handleYearChange(event)
+    function handleAddFood()
     {
-        setCar(c => ({...car, year: event.target.value}))
+        const foodItem = document.getElementById("foodName").value;
+        document.getElementById("foodName").value = "";
+
+        setFoods(f => [...f,foodItem]);
     }
 
-    function handleModelChange(event)
+    function handleRemoveFood(index)
     {
-        setCar(c => ({...car, model: event.target.value}))
+        setFoods(foods.filter((_, i)=>i!==index));
     }
 
-    function handleMakeChange(event)
-    {
-        setCar(c => ({...car, make: event.target.value}))
-    }
-
-    return(<div>
-        <p>Your favourite car is: {car.year} {car.make} {car.model}</p>
-        <input type="number" value={car.year} onChange={handleYearChange} /><br />
-        <input type="text" value={car.make} onChange={handleMakeChange} /><br />
-        <input type="text" value={car.model} onChange={handleModelChange} />
-    </div>);
+    return(
+        <div>
+            <h1>Your Food items: </h1>
+            <ul>
+                {foods.map((food, index) => <li key={index} onClick={()=>handleRemoveFood(index)}>{food}</li>)}
+            </ul>
+            <input type="text" id='foodName' placeholder='Enter your food here' />
+            <button onClick={handleAddFood}>Add Item</button>
+        </div>
+    );
 }
