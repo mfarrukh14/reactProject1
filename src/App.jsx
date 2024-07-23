@@ -1,11 +1,10 @@
-import Counter from "./assets/Counter";
-import MyComponent from "./MyComponent";
+import ToDoList from "./ToDoList";
 
 export default function App()
 {
   return(
     <>
-      <MyComponent />
+      <ToDoList />
     </>
   );
 }

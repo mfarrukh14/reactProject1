@@ -16,7 +16,7 @@ export default function MyComponent()
 
     function handleRemoveCar(index)
     {
-        setCars(cars.filter((_,i)=>i!==index));
+        setCars(c=>c.filter((_,i)=>i!==index));
     }
 
     function handleCarYearChange(event)
