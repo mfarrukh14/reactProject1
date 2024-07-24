@@ -2,22 +2,32 @@ import React, {useState, useEffect} from 'react';
 
 export default function MyComponent()
 {
-    const [count, setCount] = useState(0);
+    const [width, setWidth] = useState(window.innerWidth);
+    const [height, setHeight] = useState(window.innerHeight);
 
-    useEffect(() => {
-        document.title = `count: ${count}`
-    }, [count])
+    useEffect(()=>{
+        window.addEventListener("resize", handleWindowChange);
+        console.log("EVENT LISTENER ADDED");
 
-    function handleAdd()
+        //Clean up after
+        return(()=>{
+            window.removeEventListener("resize", handleWindowChange);
+        });
+    }, []);
+
+    useEffect(()=>{
+        document.title = `${width} ${height}`;
+    },[width,height]);
+
+    function handleWindowChange()
     {
-        setCount(c => c+1);
+        setHeight(window.innerHeight);
+        setWidth(window.innerWidth);
     }
 
-    return(
-        <>
-                <p>Count: {count}</p>
-                <button onClick={handleAdd}>Add</button>
-        </>
-    );
+    return(<>
+        <h1>Width: {width}</h1>
+        <h1>Height: {height}</h1>
+    </>);
 
 }
