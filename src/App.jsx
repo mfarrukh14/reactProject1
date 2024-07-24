@@ -1,10 +1,10 @@
-import MyComponent from "./MyComponent";
+import DigitalClock from "./DigitalClock";
 
 export default function App()
 {
   return(
     <>
-      <MyComponent />
+      <DigitalClock />
     </>
   );
 }
