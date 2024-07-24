@@ -4,3 +4,7 @@ This repository is part of hand-on experience with react. It involves me buildin
 ## Excercise 1: To Do List
 ![to-do-list](./excercises/todolist.png)
 
+
+## Excercise 2: Digital Clock
+
+![digital-clock](./excercises/digital-clock.png)
