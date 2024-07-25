@@ -1,10 +1,10 @@
-import MyComponent from './MyComponent.jsx'
+import Stopwatch from "./Stopwatch.jsx";
 
 export default function App()
 {
   return(
     <>
-      <MyComponent />
+      <Stopwatch />
     </>
   );
 }
