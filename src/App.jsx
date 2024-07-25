@@ -1,10 +1,10 @@
-import ComponentA from './ComponentA.jsx'
+import MyComponent from './MyComponent.jsx'
 
 export default function App()
 {
   return(
     <>
-      <ComponentA />
+      <MyComponent />
     </>
   );
 }
