@@ -8,3 +8,7 @@ This repository is part of hand-on experience with react. It involves me buildin
 ## Excercise 2: Digital Clock
 
 ![digital-clock](./excercises/digital-clock.png)
+
+## Excercise 3: Stopwatch
+
+![stopwatch](./excercises/stopwatch.png)
